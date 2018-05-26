@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Profil from "./Profil";
-
 class App extends Component {
   render() {
     return (
