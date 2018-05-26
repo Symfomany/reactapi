@@ -16,8 +16,6 @@ class ApiController {
       },
       languages: ["PHP", "JS", "JAVA", "Swift", "Haskell"]
     };
-
-    res.json(demo);
   }
 }
 
