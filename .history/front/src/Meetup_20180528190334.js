@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./Meetup.css";
 import { Link } from "react-router-dom";
 
 class Meetup extends Component {
@@ -14,7 +13,7 @@ class Meetup extends Component {
           className="card-img-top img-fluid"
           src={this.props.meetup.url}
           alt="Card image cap"
-          style={{ maxHeight: "179px" }}
+          style={{ minHeight: "235px" }}
         />
         <div className="card-body">
           <h4 className="card-title">{this.props.meetup.title}</h4>

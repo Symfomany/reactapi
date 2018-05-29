@@ -72,20 +72,14 @@ class App extends Component {
           <Route
             exact
             path="/"
+            render={MyListe}
             children={({ match, ...rest }) => (
               <TransitionGroup component={firstChild}>
-                {match && MyListe(rest)}
+                {match && <Home {...rest} />}
               </TransitionGroup>
             )}
           />
-          <Route
-            path="/create"
-            children={({ match, ...rest }) => (
-              <TransitionGroup component={firstChild}>
-                {match && MeetupForm(rest)}
-              </TransitionGroup>
-            )}
-          />
+          <Route path="/create" render={MeetupForm} />
           <Route path="/update/:id" render={MeetupForm} />
         </div>
       </div>

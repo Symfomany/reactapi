@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./Meetup.css";
 import { Link } from "react-router-dom";
 
 class Meetup extends Component {
@@ -14,7 +13,7 @@ class Meetup extends Component {
           className="card-img-top img-fluid"
           src={this.props.meetup.url}
           alt="Card image cap"
-          style={{ maxHeight: "179px" }}
+          style={{ minHeight: "235px" }}
         />
         <div className="card-body">
           <h4 className="card-title">{this.props.meetup.title}</h4>
@@ -27,14 +26,11 @@ class Meetup extends Component {
           </p>
           <a
             onClick={e => this.props.remove(this.props.meetup)}
-            className="btn btn-warning btn-sm"
+            className="btn btn-warning"
           >
             <i className="fa fa-trash" /> Supprimer
           </a>
-          <Link
-            to={`/update/${this.props.meetup.id}`}
-            className="btn btn-info  btn-sm"
-          >
+          <Link to={`/update/${this.props.meetup.id}`} className="btn btn-info">
             <i className="fa fa-pencil-alt" /> Compléter
           </Link>
         </div>

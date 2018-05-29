@@ -80,6 +80,7 @@ class App extends Component {
           />
           <Route
             path="/create"
+            render={MeetupForm}
             children={({ match, ...rest }) => (
               <TransitionGroup component={firstChild}>
                 {match && MeetupForm(rest)}

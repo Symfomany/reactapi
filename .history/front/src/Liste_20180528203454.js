@@ -3,7 +3,6 @@ import ajax from "./config";
 import Meetup from "./Meetup";
 import "./Liste.css";
 import { Link } from "react-router-dom";
-import AnimatedWrapper from "./AnimatedWrapper";
 
 class Liste extends Component {
   constructor(props) {
@@ -48,4 +47,4 @@ class Liste extends Component {
   }
 }
 
-export default AnimatedWrapper(Liste);
+export default Liste;

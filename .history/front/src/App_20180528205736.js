@@ -69,23 +69,8 @@ class App extends Component {
         <div className="container animated-page-wrapper">
           {/* Declarations of Routes  --> */}
 
-          <Route
-            exact
-            path="/"
-            children={({ match, ...rest }) => (
-              <TransitionGroup component={firstChild}>
-                {match && MyListe(rest)}
-              </TransitionGroup>
-            )}
-          />
-          <Route
-            path="/create"
-            children={({ match, ...rest }) => (
-              <TransitionGroup component={firstChild}>
-                {match && MeetupForm(rest)}
-              </TransitionGroup>
-            )}
-          />
+          <Route exact path="/" render={MyListe} />
+          <Route path="/create" render={MeetupForm} />
           <Route path="/update/:id" render={MeetupForm} />
         </div>
       </div>

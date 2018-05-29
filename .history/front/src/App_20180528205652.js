@@ -5,13 +5,6 @@ import Navbar from "./Navbar";
 import ajax from "./config"; // configuration of Ajax
 import { Route } from "react-router-dom";
 import "./App.css";
-import TransitionGroup from "react-transition-group/TransitionGroup";
-
-const firstChild = props => {
-  const childrenArray = React.Children.toArray(props.children);
-  return childrenArray[0] || null;
-};
-
 /**
  * Class App
  */
@@ -69,23 +62,8 @@ class App extends Component {
         <div className="container animated-page-wrapper">
           {/* Declarations of Routes  --> */}
 
-          <Route
-            exact
-            path="/"
-            children={({ match, ...rest }) => (
-              <TransitionGroup component={firstChild}>
-                {match && MyListe(rest)}
-              </TransitionGroup>
-            )}
-          />
-          <Route
-            path="/create"
-            children={({ match, ...rest }) => (
-              <TransitionGroup component={firstChild}>
-                {match && MeetupForm(rest)}
-              </TransitionGroup>
-            )}
-          />
+          <Route exact path="/" render={MyListe} />
+          <Route path="/create" render={MeetupForm} />
           <Route path="/update/:id" render={MeetupForm} />
         </div>
       </div>
